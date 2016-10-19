@@ -2,9 +2,9 @@ angular.module("jiraApp").controller("singleController",  ["$scope", function ($
 
 
   $scope.dynamicwidths = function() {
-    var daytask = "width: 300px";
-    var weektask = "width: 500px";
-    var multiweektask= "width: 700px";
+    var daytask = "width: 200px";
+    var weektask = "width: 300px";
+    var multiweektask= "width: 400px";
     if($scope.issue.fields.timeestimate <= 28800)
        return daytask;
     if($scope.issue.fields.timeestimate > 28800  && $scope.issue.fields.timeestimate <= 144000)

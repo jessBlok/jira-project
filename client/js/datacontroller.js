@@ -2,7 +2,7 @@ angular.module("jiraApp").controller("dataController",  ["$scope", "$http" , "Da
 
 $scope.data = DataFactory.query();
 
- $scope.thisCanBeusedInsideNgBindHtml = $sce.trustAsHtml();
+$scope.thisCanBeusedInsideNgBindHtml = $sce.trustAsHtml();
 
 
 

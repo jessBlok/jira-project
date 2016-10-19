@@ -6,15 +6,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel = "stylesheet"  href="css/mystyles.css">
 
-
   </head>
+
   <body>
-<main class = "container">
+<div class = "container">
 <header><h1>Jira Task Board</h1></header>
 
-<div ng-controller="dataController">
-
-  <div class = "my-flexbox">
+<div class = "my-flexbox" ng-controller="dataController">
 <div ng-repeat= "issue in data.issues" class= "my-col panel panel-info" ng-controller = "singleController" style = {{dynamicwidths()}}>
 
     <div class ="panel-heading">
@@ -35,13 +33,13 @@
 
 </div>
 </div>
-</div>
 
 
 
+
 </div>
 </div>
-</main>
+
 
 
 
@@ -53,5 +51,7 @@
     <script src= "js/datacontroller.js"></script>
     <script src= "js/common/datafactory.js"></script>
     <script src= "js/singlecontroller.js"></script>
+    <script src= "js/datadirective.js"></script>
+
   </body>
 </html>

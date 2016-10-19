@@ -2,10 +2,15 @@
   margin: 5px;
 }
 
-
 .my-col {
 margin-right: 10px;
 flex: 0 0 auto;
+}
+
+@media(max-width: 900px) {
+	.my-col {
+		max-width: 100% ;
+    	}
 }
 
 .my-flexbox {
@@ -14,16 +19,31 @@ flex-wrap: nowrap;
 overflow-x: auto;
 }
 
+.panel {
+  flex: 0 0 auto;
+}
+
 .panel-heading {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 2px 2px 2px 4px;
 
+}
+
+.panel-body h3 {
+  padding: 0;
+  margin: 0;
+}
+
+.panel-body hr {
+  margin: 10px;
 }
 
 .timedateinfo {
   list-style-type: none;
   padding: 0;
+  margin: 2px;
 }
 
 
@@ -32,6 +52,7 @@ overflow-x: auto;
 }
 
 .description h1 {
-  font-size: 25px;
-  color: grey;
+  font-size: 20px;
+  color: black;
+  margin: 2;
 }
