@@ -25,12 +25,13 @@
     <div class = "labels" ng-repeat= "label in issue.fields.labels">
         <button ng-show="label != 'roadmap' && label != 'internal_result' && label != 'external_result'" class = "btn btn-warning btn-xs" id="labelbutton">{{label}}</button>
     </div><!--End ng-repeat of labels-->
-    <p class = "card-text">{{issue.fields.description}}</p>
     <ul class="list-group list-group-flush">
         <li class="list-group-item"> Time Estimate: {{issue.fields.timeestimate/28800}} Days</li>
         <li class="list-group-item">Due Date: {{issue.fields.duedate}}</li>
 
       </ul>
+    <div  ng-bind-html ="issue.renderedFields.description | trust"></div>
+
 </div>
 </div>
 </div>
