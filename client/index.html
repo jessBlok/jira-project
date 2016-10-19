@@ -8,39 +8,37 @@
 
   </head>
 
-  <body>
-<div class = "container">
-<header><h1>Jira Task Board</h1></header>
+<body>
+  <div class = "container ng-cloak" >
+    <header><h1>Jira Task Board</h1></header>
 
-<div class = "my-flexbox" ng-controller="dataController">
-<div ng-repeat= "issue in data.issues" class= "my-col panel panel-info" ng-controller = "singleController" style = {{dynamicwidths()}}>
+    <div class = "my-flexbox" ng-controller="dataController">
+      <div ng-repeat= "issue in data.issues" class= "my-col panel panel-info" ng-controller = "singleController" style = {{dynamicwidths()}}>
 
-    <div class ="panel-heading">
-      <h3 class="panel-title">{{issue.key}}</h3>
-      <div class = "labels" ng-repeat= "label in issue.fields.labels">
-          <button ng-show="label != 'roadmap' && label != 'internal_result' && label != 'external_result'" class = "btn btn-warning btn-xs" id="labelbutton">{{label}}</button>
-      </div><!--End ng-repeat of labels-->
-    </div>
-    <div class = "panel-body">
-      <h3>{{issue.fields.summary}}</h3>
-    <hr>
-    <ul class ="timedateinfo">
-        <li class=""> <strong> Time Estimate: </strong> {{issue.fields.timeestimate/28800}} Days</li>
-        <li class=""><strong>Due Date: </strong> {{issue.fields.duedate}}</li>
-    </ul>
-    <hr>
-    <div  class = "description" ng-bind-html ="issue.renderedFields.description | trust"></div>
+        <div class ="panel-heading">
+          <h3 class="panel-title">{{issue.key}}</h3>
+          <div class = "labels" ng-repeat= "label in issue.fields.labels">
+            <button ng-show="label != 'roadmap' && label != 'internal_result' && label != 'external_result'" class = "btn btn-warning btn-xs" id="labelbutton">{{label}}</button>
+          </div><!--End ng-repeat of labels-->
+        </div><!--End panel heading-->
+      <div class = "panel-body">
+          <h3>{{issue.fields.summary}}</h3>
+          <hr>
+          <ul class ="timedateinfo">
+              <li class=""> <strong> Time Estimate: </strong> {{issue.fields.timeestimate/28800}} Days</li>
+              <li class=""><strong>Due Date: </strong> {{issue.fields.duedate}}</li>
+          </ul>
+          <hr>
+          <div  class = "description" ng-bind-html ="issue.renderedFields.description | trust"></div>
 
-</div>
-</div>
+      </div><!--End panel body-->
+    </div><!--End ng-repeat div for issues-->
 
-
-
-
-</div>
-</div>
+<!--New Rows Would Come here-->
 
 
+</div><!--End flexbox-->
+</div><!--End container-->
 
 
 
