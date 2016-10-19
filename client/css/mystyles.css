@@ -1,0 +1,18 @@
+#labelbutton {
+  margin-bottom: 5px;
+}
+
+.labels {
+  display: inline;
+}
+
+.my-col {
+margin-right: 10px;
+flex: 0 0 auto;
+}
+
+.my-flexbox {
+display: flex;
+flex-wrap: nowrap;
+overflow-x: auto;
+}

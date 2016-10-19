@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="jiraApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Jira Scrum Task Board</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel = "stylesheet"  href="css/mystyles.css">
+
+
+  </head>
+  <body>
+<main class = "container">
+<header><h1>Jira Task Board</h1></header>
+
+<div ng-controller="dataController">
+
+  <div class = "my-flexbox">
+<div ng-repeat= "issue in data.issues" class= "my-col panel panel-info" ng-controller = "singleController" style = {{dynamicwidths()}}>
+
+    <div class ="panel-heading">
+      <h3 class="panel-title">{{issue.key}}</h3>
+    </div>
+    <div class = "panel-body">
+      <h4>{{issue.fields.summary}}</h4>
+    <div class = "labels" ng-repeat= "label in issue.fields.labels">
+        <button ng-show="label != 'roadmap'" class = "btn btn-warning btn-xs" id="labelbutton">{{label}}</button>
+    </div><!--End ng-repeat of labels-->
+    <p class = "card-text">{{issue.fields.description}}</p>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item"> Time Estimate: {{issue.fields.timeestimate/28800}} Days</li>
+        <li class="list-group-item">Due Date: {{issue.fields.duedate}}</li>
+
+      </ul>
+</div>
+</div>
+</div>
+
+
+
+</div>
+</div>
+</main>
+
+
+
+
+<!--LOADING SCRIPTS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-resource.min.js"></script>
+    <script src= "app.js"></script>
+    <script src= "js/datacontroller.js"></script>
+    <script src= "js/common/datafactory.js"></script>
+    <script src= "js/singlecontroller.js"></script>
+  </body>
+</html>
