@@ -15,24 +15,3 @@ angular.module("jiraApp").factory('DataFactory', ['$resource', function($resourc
   });
 
   }]);
-
-
-
-
-//   return $resource('https://pinguintest.atlassian.net/rest/api/issue/:key', {key: '@key'},
-// )
-// };
-// }]);
-//
-
-
-// {
-// getdata: {
-//  method: 'GET',
-//  headers: {
-//  'Access-Control-Allow-Origin': '*',
-//    'Authorization': 'Basic amVzc21ibG9rbGFuZDpqaXJhbWVub3ch',
-//    'Access-Control-Allow-Methods': 'GET',
-//  'Access-Control-Allow-Headers': 'Content-Type'
-// }
-// }

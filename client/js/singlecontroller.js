@@ -15,13 +15,4 @@ angular.module("jiraApp").controller("singleController",  ["$scope", function ($
 
 
 
-
-
-
-
-
-
-
-
-
 }]);
