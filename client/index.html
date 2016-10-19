@@ -19,18 +19,19 @@
 
     <div class ="panel-heading">
       <h3 class="panel-title">{{issue.key}}</h3>
+      <div class = "labels" ng-repeat= "label in issue.fields.labels">
+          <button ng-show="label != 'roadmap' && label != 'internal_result' && label != 'external_result'" class = "btn btn-warning btn-xs" id="labelbutton">{{label}}</button>
+      </div><!--End ng-repeat of labels-->
     </div>
     <div class = "panel-body">
-      <h4>{{issue.fields.summary}}</h4>
-    <div class = "labels" ng-repeat= "label in issue.fields.labels">
-        <button ng-show="label != 'roadmap' && label != 'internal_result' && label != 'external_result'" class = "btn btn-warning btn-xs" id="labelbutton">{{label}}</button>
-    </div><!--End ng-repeat of labels-->
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item"> Time Estimate: {{issue.fields.timeestimate/28800}} Days</li>
-        <li class="list-group-item">Due Date: {{issue.fields.duedate}}</li>
-
-      </ul>
-    <div  ng-bind-html ="issue.renderedFields.description | trust"></div>
+      <h3>{{issue.fields.summary}}</h3>
+    <hr>
+    <ul class ="timedateinfo">
+        <li class=""> <strong> Time Estimate: </strong> {{issue.fields.timeestimate/28800}} Days</li>
+        <li class=""><strong>Due Date: </strong> {{issue.fields.duedate}}</li>
+    </ul>
+    <hr>
+    <div  class = "description" ng-bind-html ="issue.renderedFields.description | trust"></div>
 
 </div>
 </div>

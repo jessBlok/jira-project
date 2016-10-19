@@ -1,10 +1,7 @@
 #labelbutton {
-  margin-bottom: 5px;
+  margin: 5px;
 }
 
-.labels {
-  display: inline;
-}
 
 .my-col {
 margin-right: 10px;
@@ -15,4 +12,26 @@ flex: 0 0 auto;
 display: flex;
 flex-wrap: nowrap;
 overflow-x: auto;
+}
+
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.timedateinfo {
+  list-style-type: none;
+  padding: 0;
+}
+
+
+.summary h3 {
+  font-size: 35px;
+}
+
+.description h1 {
+  font-size: 25px;
+  color: grey;
 }
